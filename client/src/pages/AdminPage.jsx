@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import { getFeedback } from "../api";
 
+function maskWorkshopId(id = "") {
+  if (id.length < 4) return "••••";
+  return `${id.slice(0, 1)}${"•".repeat(id.length - 3)}${id.slice(-2)}`;
+}
+
 export function AdminPage({ user }) {
   const [feedback, setFeedback] = useState([]);
   const [error, setError] = useState("");
@@ -22,7 +27,7 @@ export function AdminPage({ user }) {
         {feedback.map((item) => (
           <article className="feedback-row" key={item.id}>
             <div>
-              <div className="feedback-meta">{item.name} · {new Date(item.createdAt).toLocaleDateString()}</div>
+              <div className="feedback-meta">{item.name} · {maskWorkshopId(item.nric)} · {new Date(item.createdAt).toLocaleDateString()}</div>
               <p>{item.message}</p>
             </div>
             <span className="status-pill">{item.status}</span>
