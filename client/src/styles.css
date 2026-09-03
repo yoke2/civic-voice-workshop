@@ -1,4 +1,12 @@
 :root { font-family: "DM Sans", system-ui, sans-serif; color: #17222b; background: #f7f5f0; font-synthesis: none; }
+[data-theme="dark"] { color: #f4f1eb; background: #17222b; }
+[data-theme="dark"] .site-header, [data-theme="dark"] .login-panel, [data-theme="dark"] .form-card, [data-theme="dark"] .feedback-list, [data-theme="dark"] .summary-card { background: #24313a; border-color: #45545d; color: #f4f1eb; }
+[data-theme="dark"] .brand, [data-theme="dark"] label, [data-theme="dark"] .character-count { color: #f4f1eb; }
+[data-theme="dark"] .page-heading p, [data-theme="dark"] .muted, [data-theme="dark"] .signed-in, [data-theme="dark"] .feedback-meta, [data-theme="dark"] .list-header span, [data-theme="dark"] .summary-card span { color: #c0cbd0; }
+[data-theme="dark"] input, [data-theme="dark"] textarea { background: #17222b; border-color: #586971; color: #f4f1eb; }
+[data-theme="dark"] .feedback-row, [data-theme="dark"] .list-header { border-color: #45545d; }
+[data-theme="dark"] .role-switch { background: #38464f; }
+[data-theme="dark"] .role-switch button.active { background: #f4f1eb; color: #17222b; }
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 320px; }
 button, input, textarea { font: inherit; }
