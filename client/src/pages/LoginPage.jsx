@@ -10,10 +10,16 @@ export function LoginPage({ onLogin }) {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setBusy(true);
     setError("");
+    const workshopId = nric.trim().toUpperCase();
+    if (!/^S\d{7}[A-Z]$/.test(workshopId)) {
+      setError("Enter a valid workshop ID, for example S0000001A.");
+      return;
+    }
+
+    setBusy(true);
     try {
-      const session = await login({ nric, password, role });
+      const session = await login({ nric: workshopId, password, role });
       onLogin(session);
     } catch (requestError) {
       setError(requestError.message);
